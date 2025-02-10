@@ -157,7 +157,7 @@ NlohmannSerializer::~NlohmannSerializer() {
 }
 
 std::string NlohmannSerializer::dump() const {
-  return json->dump();
+  return json->dump(-1, ' ', false, nlohmann::json::error_handler_t::replace);
 }
 
 bool NlohmannSerializer::serialize(dap::boolean v) {
